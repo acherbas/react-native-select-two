@@ -7,6 +7,8 @@ import Button from './lib/Button';
 import TagItem from './lib/TagItem';
 import utilities from './lib/utilities';
 import PropTypes from 'prop-types';
+import CheckCircleOutline from "./lib/assets/CheckCircleOutline";
+import RadioboxBlank from "./lib/assets/RadioboxBlank";
 
 const { height } = Dimensions.get('window');
 const INIT_HEIGHT = height * 0.6;
@@ -108,9 +110,14 @@ class Select2 extends Component {
                 <Text style={[styles.itemText, this.defaultFont]}>
                     {item.name}
                 </Text>
-                <Icon style={styles.itemIcon}
+                { item.checked ? (
+                    <CheckCircleOutline style={styles.itemIcon} color={colorTheme} />
+                ) : (
+                    <RadioboxBlank style={styles.itemIcon} color='#777777'/>
+                )}
+                {/* <Icon style={styles.itemIcon}
                     name={item.checked ? 'check-circle-outline' : 'radiobox-blank'}
-                    color={item.checked ? colorTheme : '#777777'} size={20} />
+                    color={item.checked ? colorTheme : '#777777'} size={20} /> */}
             </TouchableOpacity>
         );
     }
