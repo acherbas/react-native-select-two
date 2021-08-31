@@ -111,9 +111,9 @@ class Select2 extends Component {
                     {item.name}
                 </Text>
                 { item.checked ? (
-                    <CheckCircleOutline style={styles.itemIcon} color={colorTheme} />
+                    <View style={styles.itemIcon}><CheckCircleOutline style={styles.itemIcon} color={colorTheme} /></View>
                 ) : (
-                    <RadioboxBlank style={styles.itemIcon} color='#777777'/>
+                    <View style={styles.itemIcon}><RadioboxBlank style={styles.itemIcon} color='#777777'/></View>
                 )}
                 {/* <Icon style={styles.itemIcon}
                     name={item.checked ? 'check-circle-outline' : 'radiobox-blank'}
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
         fontSize: 16, color: '#333', flex: 1
     },
     itemIcon: {
-        width: 30, textAlign: 'right'
+        width: 34, textAlign: 'right'
     },
     empty: {
         fontSize: 16, color: 'gray', alignSelf: 'center', textAlign: 'center', paddingTop: 16
